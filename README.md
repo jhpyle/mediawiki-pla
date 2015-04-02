@@ -38,6 +38,10 @@ This is the Kerberos configuration file, /etc/krb5.conf.  It points Apache to ou
 
 This is the startup script for mw-serve, /etc/init.d/mw-serve.  This is necessary for obtaining high-quality PDF export to work on a non-public wiki.  See the Collection extension and the "PDF export with mw-serve" section below.
 
+## backup-script.sh
+
+This is a backup script that runs on a daily basis from /etc/cron.daily/backup-script.sh.  It performs a rolling backup (seven days' worth) of the the MySQL databases.  It saves the MySQL database backup and a copy of all the MediaWiki files (code and uploaded files) to a Windows network drive.
+
 # Extensions
 
 See [Extensions](http://www.mediawiki.org/wiki/Manual:Extensions) for instructions on how to install extensions.  Extensions are bundled as zip files or .tar.gz files and you unpack those files into the "extensions" subfolder.  Then you need to add something to LocalSettings.php to enable the extension.  Every extension has a page that explains what those lines need to say.
